@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="//unpkg.com/topojson@3"></script>
+    <title>Affordability</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <h1 id="yeartitle">2014/15</h1>
+        <!-- some controls -->
+        <form id="form">
+            <input type="button" value="<" id="previousbutton">
+            <label for="yearselect">Select year:</label>
+            <input type="range" min="0" max="7" value="0" id="yearselect">
+            <input type="button" value=">" id="nextbutton">
+        </form>
+        <!-- space for a map -->
+        <div class="map"></div>
+    </main>
+    <script src="maps.js"></script>
+      
+</body>
+</html>
