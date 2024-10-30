@@ -16,7 +16,7 @@ let map = undefined;
 const color = d3.scaleSequential(d3.interpolateReds);
 
 // a list of years for the data - would be better to read this dynamically from the data itself but meh
-const years = ['2014/15', '2015/16', '2016/17', '2018/19', '2019/20', '2020/21', '2021/22', '2022/23'];
+let years = ['2014/15', '2015/16', '2016/17', '2018/19', '2019/20', '2020/21', '2021/22', '2022/23'];
 
 
 // load the map data and the source data
@@ -27,16 +27,16 @@ Promise.all([
 
     // work out our maximum and minimum values for the data over *all* years
     let min = Number.MAX_SAFE_INTEGER;
-    for(year of years){
-        let min_year = d3.min(csv_data, d => +d[year]);
+    for(y of years){
+        let min_year = d3.min(csv_data, d => +d[y]);
         if(min_year < min){
             min = min_year;
         }
     }
 
     let max = 0;
-    for(year of years){
-        let max_year = d3.max(csv_data, d => +d[year]);
+    for(y of years){
+        let max_year = d3.max(csv_data, d => +d[y]);
         if(max_year > max){
             max = max_year;
         }
